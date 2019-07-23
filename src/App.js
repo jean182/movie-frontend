@@ -1,6 +1,8 @@
 import React from "react"
 import { Provider } from "react-redux"
+import { BrowserRouter as Router } from "react-router-dom"
 import setupStore from "./redux/setupStore"
+import AppRouter from "./AppRouter"
 import "./styles/main.scss"
 
 const store = setupStore()
@@ -8,7 +10,9 @@ const store = setupStore()
 function App() {
   return (
     <Provider store={store}>
-      <h1 className="text-primary">Movie App</h1>
+      <Router>
+        <AppRouter />
+      </Router>
     </Provider>
   )
 }
